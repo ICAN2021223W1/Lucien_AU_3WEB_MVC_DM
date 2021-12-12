@@ -67,6 +67,7 @@ class ModeleController {
     public function show(){
 
         ob_start();
+        
         if(isset($_GET['modele']) && !empty($_GET['modele'])
         ){
             $mom = new ModeleManager();
@@ -93,15 +94,16 @@ class ModeleController {
 
     public function update(){
         
-        if(isset($_POST['nom']) && isset($_POST['prix']) && !empty($_POST['nom']) && !empty($_POST['prix'])
+        if(isset($_POST['nom']) && isset($_POST['prix']) && !empty($_POST['nom']) && !empty($_POST['prix']) 
+        && isset($_POST['id']) && !empty($_POST['id'])
         ){
 
             $mom = new ModeleManager();
-            $modele = $mom->findOneById($_GET['modele']);
+            $modele = $mom->findOneById($_POST['id']);
 
             if($modele->rowCount() == 1){
 
-                $mom->setId($_GET['modele'])
+                $mom->setId($_POST['id'])
                     ->setNom($_POST['nom'])
                     ->setPrix($_POST['prix']);
 

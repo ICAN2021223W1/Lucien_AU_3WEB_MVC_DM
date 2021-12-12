@@ -109,7 +109,7 @@ class MarqueController{
     
     public function update(){
 
-        if(isset($_POST['nom']) && !empty($_POST['nom'])){
+        if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_GET['marque']) && !empty($_GET['marque'])){
             
             $mm = new MarqueManager();
             $marque = $mm->findOneById($_GET['marque']);

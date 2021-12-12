@@ -1,6 +1,6 @@
 <?php
-	$url = "Lucien_AU_3WEB_MVC_DM/src/";
-	// $path = "/Applications/MAMP/htdocs".$url;
+	$url = "Lucien_AU_3WEB_MVC_DM/";
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
